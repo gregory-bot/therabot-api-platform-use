@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Heart, Accessibility, MessageCircle, Sparkles } from 'lucide-react';
+import { Heart, Accessibility, MessageCircle, Sparkles, Phone, Video } from 'lucide-react';
 
 const images = [
   'https://i.pinimg.com/1200x/95/50/7b/95507ba220ef508566c715ed9a6e13b1.jpg',
@@ -7,7 +7,7 @@ const images = [
   'https://media.istockphoto.com/id/1513072392/photo/hands-holding-paper-head-human-brain-with-flowers-self-care-and-mental-health-concept.jpg?b=1&s=612x612&w=0&k=20&c=boMJwSib2tbtpppWfjTiIkJLwHVLHipeRd8QzDE0Dl0=',
 ];
 
-export default function Hero({ onStartChat }) {
+export default function Hero({ onStartChat, onStartVoiceCall, onStartVideoCall }) {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -40,13 +40,22 @@ export default function Hero({ onStartChat }) {
               onClick={onStartChat}
               className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
             >
+              <MessageCircle className="w-5 h-5" />
               Chat Now
             </button>
             <button
-              onClick={onStartChat}
-              className="bg-white hover:bg-gray-50 text-purple-500 border-2 border-purple-500 font-semibold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200"
+              onClick={onStartVoiceCall}
+              className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
             >
-              Learn More
+              <Phone className="w-5 h-5" />
+              Voice Call
+            </button>
+            <button
+              onClick={onStartVideoCall}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
+            >
+              <Video className="w-5 h-5" />
+              Video Call
             </button>
           </div>
         </div>

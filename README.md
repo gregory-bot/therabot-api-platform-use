@@ -55,6 +55,9 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
 VITE_FIREBASE_APP_ID=your_firebase_app_id
 ```
 
+##Go to Therabot API https://www.theraapi.com/ and get an API key
+ 
+
 4. Start the development server
 ```bash
 npm run dev
